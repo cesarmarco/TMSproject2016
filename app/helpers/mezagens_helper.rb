@@ -1,0 +1,2 @@
+module MezagensHelper
+end

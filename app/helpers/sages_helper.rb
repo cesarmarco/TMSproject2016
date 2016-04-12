@@ -1,0 +1,2 @@
+module SagesHelper
+end
