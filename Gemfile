@@ -28,6 +28,8 @@ gem 'jbuilder', '2.2.3'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '0.4.0', group: :doc
 
+#gem 'pg'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -38,8 +40,8 @@ gem 'sdoc', '0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'sqlite3','1.3.9'
   
+  gem 'sqlite3','1.3.9'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug','3.4.0'
 
