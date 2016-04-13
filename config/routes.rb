@@ -14,14 +14,14 @@ Rails.application.routes.draw do
   
   get 'cart/index'
 
-  #get 'site/about'
-  #get 'site/contact'
- # get 'site/profile'
+  get 'site/about'
+  get 'site/contact'
+  get 'site/profile'
  
  
   get '/items' => 'site#items'
   get '/about' => 'site#about'
-  get '/contact' => 'site#contact' 
+  #get '/contact' => 'site#contact' 
   get '/profile' => 'site#profile'
  
   get '/Admin' => 'user#admin_login'
