@@ -1,11 +1,14 @@
 class SiteController < ApplicationController
   
-  def name:string
+  def names
+      names:string
   end
 
-  def title:string
+  def title
+      title:string
   end
 
-  def body:text
+  def body
+      body:text
   end
 end
