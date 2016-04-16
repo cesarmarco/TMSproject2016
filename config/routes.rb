@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :orders_details
+  resources :orders
+  resources :products
+  resources :categories
+  resources :customers
   get 'staticpages/home'
 
   get 'staticpages/products'
