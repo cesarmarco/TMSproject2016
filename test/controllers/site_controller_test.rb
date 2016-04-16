@@ -12,7 +12,7 @@ class SiteControllerTest < ActionController::TestCase
   end
 
   test "should get body:text" do
-    get :body
+    get :body 
     assert_response :success
   end
 

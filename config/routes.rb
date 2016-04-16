@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   resources :orders_details
   resources :orders
-  resources :products
+ # resources :products
   resources :categories
   resources :customers
   get 'staticpages/home'
-
+  
   get 'staticpages/products'
-
+ 
   get 'staticpages/about'
 
   get 'staticpages/contact_us'
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   
  
   get '/' => 'staticpages#home'
+  #resources :products
   get '/products' => 'items#index'
  # get '/products' => 'staticpages#products'
   get '/about'=> 'staticpages#about'
