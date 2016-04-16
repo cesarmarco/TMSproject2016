@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'staticpages/home'
+
+  get 'staticpages/products'
+
+  get 'staticpages/about'
+
+  get 'staticpages/contact_us'
+
+  get 'staticpages/profile'
+  
+ 
+  get '/' => 'staticpages#home'
+  get '/products' => 'items#index'
+ # get '/products' => 'staticpages#products'
+  get '/about'=> 'staticpages#about'
+  get '/contact' => 'staticpages#contact_us'
+  get '/profile' => 'staticpages#profile'
+
   get 'viewer/show'
   resources :sites 
   #get 'site.name', :controller => 'viewer', :action => 'show'
@@ -11,19 +29,12 @@ Rails.application.routes.draw do
   get 'site/body:text' => 'site#body:text'
 
   resources :mezages
-  
   get 'cart/index'
 
-  get 'site/about'
-  get 'site/contact'
-  get 'site/profile'
- 
- 
-  get '/items' => 'site#items'
-  get '/about' => 'site#about'
-  #get '/contact' => 'site#contact' 
-  get '/profile' => 'site#profile'
- 
+  #get 'site/about'
+  #get 'site/contact'
+  #get 'site/profile'
+  
   get '/Admin' => 'user#admin_login'
   get '/logout' => 'user#logout'
   
@@ -42,7 +53,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'site#index'
-   root 'items#index'
+   #root 'items#index'
+   root 'staticpages#home'
+   
    # match '*path' => redirect('/'), via: :get
    get '*path' => redirect('/')
   # Example of regular route:
