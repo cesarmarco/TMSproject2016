@@ -1,27 +1,43 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'sessions/new'
+
+  root                'staticpages#home'
+  get 'products' => 'items#index'
+  get    'about'   => 'staticpages#about'
+  get    'contact' => 'staticpages#contact_us'
+  get    'signup'  => 'users#new'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+ 
+ ####################################
   resources :orders_details
   resources :orders
  # resources :products
   resources :categories
   resources :customers
-  get 'staticpages/home'
+ # get 'staticpages/home'
   
-  get 'staticpages/products'
+ # get 'staticpages/products'
  
-  get 'staticpages/about'
+  #get 'staticpages/about'
 
-  get 'staticpages/contact_us'
+ # get 'staticpages/contact_us'
 
-  get 'staticpages/profile'
+  #get 'staticpages/profile'
   
  
-  get '/' => 'staticpages#home'
-  #resources :products
-  get '/products' => 'items#index'
- # get '/products' => 'staticpages#products'
-  get '/about'=> 'staticpages#about'
-  get '/contact' => 'staticpages#contact_us'
-  get '/profile' => 'staticpages#profile'
+  #get '/' => 'staticpages#home'
+  #get '/products' => 'items#index'
+        # get '/products' => 'staticpages#products'
+  #get '/about'=> 'staticpages#about'
+ # get '/contact' => 'staticpages#contact_us'
+  #get '/profile' => 'staticpages#profile'
 
   get 'viewer/show'
   resources :sites 
@@ -41,7 +57,7 @@ Rails.application.routes.draw do
   #get 'site/contact'
   #get 'site/profile'
   
-  get '/Admin' => 'user#admin_login'
+ # get '/Admin' => 'user#admin_login'
   get '/logout' => 'user#logout'
   
   get '/cart' => 'cart#index'
@@ -50,7 +66,10 @@ Rails.application.routes.draw do
   
  # match '/contact', to 'contacts#new', via 'get'
   resources :items
+ 
+ # post 'users', to: 'users#create'
   
+  post 'users', to: 'staticpages#profile'
   
  # get '/contacts' => 'contacts#new'
  # resources "contacts", only: [:new, :create]
@@ -60,7 +79,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'site#index'
    #root 'items#index'
-   root 'staticpages#home'
+  # root 'staticpages#home'
    
    # match '*path' => redirect('/'), via: :get
    get '*path' => redirect('/')

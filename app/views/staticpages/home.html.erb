@@ -1,14 +1,19 @@
 
-<p>Find me in app/views/staticpages/home.html.erb</p>
+<div class="center jumbotron">
+  <h3>Welcome to the TMSports</h3>
+
+  <h4>
+    This is your shoponline!
+    
+  </h4>
+  <%= link_to "Login", 'sessions#create', class: "btn btn-lg btn-primary" %>
+  <%= link_to "Signup", 'users#new', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
+            'http://rubyonrails.org/' %>
 
 
 
-  
 
-<center>><h1>TMSports</h1></center>
-<center><h3>WELCOME TO TMSports ONLINE</h3></center>
-<p>
-  This is the home page for the
-  <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+ 
